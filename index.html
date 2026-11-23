@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Volunteer registration – Lebanese Red Cross Youth Antelias</title>
+  <meta name="description" content="Register as a volunteer with the Lebanese Red Cross Youth Antelias.">
+  <style>
+    html, body { margin: 0; height: 100%; background: #EEF1F4; }
+    iframe { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; }
+  </style>
+</head>
+<body>
+  <iframe id="app" title="Volunteer registration"></iframe>
+  <script>
+    // The Apps Script "Public" deployment. Query strings are passed through, so
+    // volunteer panel links (?p=me&t=TOKEN) work through this page too.
+    var APP = 'https://script.google.com/macros/s/AKfycbxYRfnv5SoSpT1exmKnYBzPdFjm9JiDqvrqPcESKpp6nJ9litYS6HB3kFUhXjwxPCa0/exec';
+    var params = new URLSearchParams(location.search);
+    if (params.get('p') === 'me') document.title = 'My volunteer hours – Lebanese Red Cross Youth Antelias';
+    document.getElementById('app').src = APP + location.search;
+  </script>
+</body>
+</html>
